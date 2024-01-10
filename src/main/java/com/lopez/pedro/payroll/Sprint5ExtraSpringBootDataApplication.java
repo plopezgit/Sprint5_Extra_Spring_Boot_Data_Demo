@@ -1,6 +1,8 @@
 package com.lopez.pedro.payroll;
 
+import com.lopez.pedro.payroll.entity.Manager;
 import com.lopez.pedro.payroll.entity.Sucursal;
+import com.lopez.pedro.payroll.repository.ManagerRepository;
 import com.lopez.pedro.payroll.repository.SucursalRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,10 +15,12 @@ public class Sprint5ExtraSpringBootDataApplication {
 	public static void main(String[] args) {SpringApplication.run(Sprint5ExtraSpringBootDataApplication.class, args);}
 
 	@Bean
-	CommandLineRunner initDataDemo (SucursalRepository surcursalRepository) {
+	CommandLineRunner initDataDemo (SucursalRepository surcursalRepository,
+									ManagerRepository managerRepository) {
 		return args -> {
-			surcursalRepository.save(new Sucursal("Collegium", "Harmonic"));
-			surcursalRepository.save(new Sucursal("Brio", "Fully"));
+			Manager manager = managerRepository.save(new Manager("Rulfo"));
+			surcursalRepository.save(new Sucursal("Collegium", "Harmonic", manager));
+			surcursalRepository.save(new Sucursal("Brio", "Fully", manager));
 		};
 	}
 
