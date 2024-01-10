@@ -1,0 +1,13 @@
+package com.lopez.pedro.payroll;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Sprint5ExtraSpringBootDataApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Sprint5ExtraSpringBootDataApplication.class, args);
+	}
+
+}
