@@ -15,10 +15,10 @@ public class Manager {
     @GeneratedValue
     Integer pk_ManagerID;
     String name;
-    @OneToMany
-    List<Sucursal> sucursales;
+    @OneToMany(mappedBy = "manager")
+    List<Branch> branches;
 
-    public Manager() {
+    private Manager() {
     }
 
     public Manager(String name) {

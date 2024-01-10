@@ -8,20 +8,20 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Sucursal {
+public class Branch {
     @Id
     @GeneratedValue
-    Integer pk_SucursalID;
+    Integer pk_BranchID;
     String name;
     String country;
     @ManyToOne
     Manager manager;
 
-    private Sucursal() {
+    private Branch() {
 
     }
 
-    public Sucursal(String name, String country, Manager manager) {
+    public Branch(String name, String country, Manager manager) {
         this.name = name;
         this.country = country;
         this.manager = manager;
