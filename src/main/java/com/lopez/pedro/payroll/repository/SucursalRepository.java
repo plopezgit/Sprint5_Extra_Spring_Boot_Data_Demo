@@ -12,5 +12,6 @@ import java.util.List;
 public interface SucursalRepository extends CrudRepository<Sucursal, Integer> {
 
     List<Sucursal> findByName (@Param("q")String name);
+    List<Sucursal> findByCountry (@Param("q")String country);
 
 }
